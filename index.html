@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -20,7 +19,6 @@
         position: relative;
         transition: transform 0.2s;
     }
-
     .container {
         text-align: center;
         background: rgba(255, 255, 255, 0.8);
@@ -32,7 +30,6 @@
         z-index: 10;
         position: relative;
     }
-
     @keyframes rainbowBlink {
         0% { color: #ff6b6b; text-shadow: 0 0 5px #ff6b6b; }
         20% { color: #ff9f43; text-shadow: 0 0 8px #ff9f43; }
@@ -41,21 +38,8 @@
         80% { color: #54a0ff; text-shadow: 0 0 8px #54a0ff; }
         100% { color: #ff6b6b; text-shadow: 0 0 8px #ff6b6b; }
     }
-
-    h1 {
-        font-size: 26px;
-        margin-bottom: 25px;
-        animation: rainbowBlink 1s infinite alternate;
-    }
-
-    .gif-container img {
-        width: 100%;
-        border-radius: 15px;
-        max-height: 300px;
-        object-fit: cover;
-        margin-bottom: 20px;
-    }
-
+    h1 { font-size: 26px; margin-bottom: 25px; animation: rainbowBlink 1s infinite alternate; }
+    .gif-container img { width: 100%; border-radius: 15px; max-height: 300px; object-fit: cover; margin-bottom: 20px; }
     button {
         font-family: 'Mali';
         font-size: 18px;
@@ -67,7 +51,6 @@
         border: none;
         margin: 5px;
     }
-
     #yesBtn { background: #ff9f43; color: white; }
     #noBtn { background: white; color: #555; position: absolute; left: 55%; }
     #yesBtn:hover { transform: scale(1.1); }
@@ -83,70 +66,27 @@
         animation: boomAnim 0.6s ease-out forwards;
         pointer-events: none;
     }
-
     @keyframes boomAnim {
         0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
         60% { transform: translate(-50%, -50%) scale(1.6); opacity: 1; }
         100% { transform: translate(-50%, -50%) scale(0.1); opacity: 0; }
     }
-
-    .heart {
-        position: fixed;
-        color: #ff4d6d;
-        animation: flyUp 2.5s linear forwards;
-        pointer-events: none;
-    }
-    @keyframes flyUp {
-        0% { transform: translateY(0) scale(1); opacity: 1; }
-        100% { transform: translateY(-150px) scale(2); opacity: 0; }
-    }
-
-    .shin {
-        position: fixed;
-        width: 70px;
-        pointer-events: none;
-        animation: shinDance 4s infinite ease-in-out;
-    }
-    @keyframes shinDance {
-        0% { transform: translate(0,0) scale(1); }
-        25% { transform: translate(40px,-20px) scale(1.1); }
-        50% { transform: translate(-30px,20px) scale(0.9); }
-        75% { transform: translate(10px,-30px) scale(1.05); }
-        100% { transform: translate(0,0) scale(1); }
-    }
+    .heart { position: fixed; color: #ff4d6d; animation: flyUp 2.5s linear forwards; pointer-events: none; }
+    @keyframes flyUp { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(-150px) scale(2); opacity: 0; } }
+    .shin { position: fixed; width: 70px; pointer-events: none; animation: shinDance 4s infinite ease-in-out; }
+    @keyframes shinDance { 0% { transform: translate(0,0) scale(1); } 25% { transform: translate(40px,-20px) scale(1.1); } 50% { transform: translate(-30px,20px) scale(0.9); } 75% { transform: translate(10px,-30px) scale(1.05); } 100% { transform: translate(0,0) scale(1); } }
 
     /* Nút dẫn link + mũi tên đáng yêu */
     #goLinkBtn {
-        background: #ff6b81;
-        color: white;
-        font-size: 20px;
-        padding: 15px 25px;
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        cursor: pointer;
-        margin-top: 20px;
+        background: #ff6b81; color: white; font-size: 20px;
+        padding: 15px 25px; border-radius: 50px;
+        display: flex; align-items: center; justify-content: center;
+        gap: 10px; cursor: pointer; margin-top: 20px;
         animation: bounceArrow 1.5s infinite;
     }
-
-    #goLinkBtn span.arrow {
-        display: inline-block;
-        font-size: 24px;
-        animation: moveArrow 1s infinite alternate;
-    }
-
-    @keyframes moveArrow {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-8px); }
-    }
-
-    @keyframes bounceArrow {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
+    #goLinkBtn span.arrow { display: inline-block; font-size: 24px; animation: moveArrow 1s infinite alternate; }
+    @keyframes moveArrow { 0% { transform: translateY(0); } 100% { transform: translateY(-8px); } }
+    @keyframes bounceArrow { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 </style>
 </head>
 <body>
@@ -155,9 +95,7 @@
     <div class="gif-container">
         <img id="mainImage" src="https://i.pinimg.com/originals/e1/78/f3/e178f3315d2520084e68a2c5388e0aa0.gif">
     </div>
-
     <h1 id="questionText">Cậu sẽ đi kỉ yếu của mìn chứ?</h1>
-
     <div class="btn-group">
         <button id="yesBtn">Đi</button>
         <button id="noBtn">Không?</button>
@@ -173,7 +111,7 @@ const btnGroup = document.querySelector(".btn-group");
 
 /* === Nhạc nền === */
 const s_global = new Audio("savetweetvid__g5gikegmpdpl8hl.mp3");
-s_global.volume = 1.0; s_global.loop = true;
+s_global.loop = true; s_global.volume = 1.0;
 window.addEventListener("load", async () => { try { await s_global.play(); } catch(e){console.log("Auto-play blocked"); }});
 document.addEventListener("click", ()=>{ if(s_global.paused) s_global.play(); });
 
@@ -187,9 +125,9 @@ const s_uoo  = new Audio("uoo-shin-chan.mp3");
 
 /* Nút né */
 noBtn.addEventListener("mouseover", ()=>{
-    const x = Math.random()*(window.innerWidth-noBtn.offsetWidth);
-    const y = Math.random()*(window.innerHeight-noBtn.offsetHeight);
-    noBtn.style.position = "fixed";
+    const x=Math.random()*(window.innerWidth-noBtn.offsetWidth);
+    const y=Math.random()*(window.innerHeight-noBtn.offsetHeight);
+    noBtn.style.position="fixed";
     noBtn.style.left=`${x}px`;
     noBtn.style.top=`${y}px`;
     [s_pew,s_ohhell,s_pop][Math.floor(Math.random()*3)].play();
@@ -198,8 +136,7 @@ noBtn.addEventListener("mouseover", ()=>{
 /* Heart random */
 setInterval(()=>{
     let h=document.createElement("div");
-    h.classList.add("heart");
-    h.innerHTML="❤️";
+    h.classList.add("heart"); h.innerHTML="❤️";
     h.style.left=Math.random()*window.innerWidth+"px";
     h.style.top=window.innerHeight-30+"px";
     h.style.fontSize=(20+Math.random()*30)+"px";
@@ -222,8 +159,7 @@ setInterval(()=>{
 setInterval(()=>{
     let img=document.createElement("img");
     img.src="https://i.pinimg.com/originals/7f/b3/3c/7fb33cf0d4f05d133da81a091b3374e4.gif";
-    img.style.position="fixed";
-    img.style.width="90px";
+    img.style.position="fixed"; img.style.width="90px";
     img.style.left=Math.random()*window.innerWidth+"px";
     img.style.top=window.innerHeight+"px";
     img.style.transition="transform 4s linear, top 4s linear";
@@ -243,12 +179,18 @@ yesBtn.addEventListener("click", ()=>{
     s_boom.play(); s_dung.play(); setTimeout(()=>{s_uoo.play();},500);
     heartBoom(); screenShake();
 
-    // === Thêm button dẫn link + mũi tên ===
     if(!document.getElementById("goLinkBtn")){
         const linkBtn=document.createElement("button");
         linkBtn.id="goLinkBtn";
         linkBtn.innerHTML='Ấn vô đây đi <span class="arrow">➡️</span>';
-        linkBtn.onclick=()=>{window.open("https://ghun1222.github.io/kiyeuye/","_blank");};
+        linkBtn.onclick=()=>{
+            // Dừng nhạc trước khi chuyển trang
+            s_global.pause();
+            s_global.currentTime = 0;
+
+            // Chuyển trang mới
+            window.location.href = "https://ghun1222.github.io/kiyeuye/";
+        };
         document.querySelector(".container").appendChild(linkBtn);
     }
 });
